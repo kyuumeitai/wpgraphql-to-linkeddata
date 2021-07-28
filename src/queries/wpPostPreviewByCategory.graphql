@@ -1,9 +1,0 @@
-query wpPostPreviewByCategory {
-  posts(where: { categoryName: "metaexplorer.io" }) {
-    edges {
-      node {
-        ...PostPreview
-      }
-    }
-  }
-}

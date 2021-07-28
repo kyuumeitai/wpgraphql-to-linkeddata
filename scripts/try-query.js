@@ -3,24 +3,24 @@ import fetch from "node-fetch";
 import { mapWpPostPreviewToSchemaBlogPost } from "../schema-out/mappers/wpPostPreviewToSchemaBlogPost.js";
 
 /**
- * this executes the wpPostPreviewByCategory on the graphql endpoint specified in ENDPOINT.
+ * this executes the wpPostPreview on the graphql endpoint specified in ENDPOINT.
  * Run in a debugger, since it doesn't do a lot of error handling
  */
 async function main() {
 	const endpoint = process.env.ENDPOINT;
-	if (!endpoint || endpoint.indexOf("localhost:8080") !== -1) {
+	if (!endpoint) {
 		console.log(
 			"please set ENDPOINT environment variable to your graphql endpoint, aborting"
 		);
 		return;
 	}
 	const wpPostPreviewByCategory = fs
-		.readFileSync("./src/queries/wpPostPreviewByCategory.graphql")
+		.readFileSync("./src/queries/wpPostPreview.graphql")
 		.toString("utf-8");
 	const postPreview = fs
 		.readFileSync("./src/fragments/PostPreview.graphql")
 		.toString("utf-8");
-	const gqlQuery = `${wpPostPreviewByCategory}\n${postPreview}`;
+	const gqlQuery = `${wpPostPreview}\n${postPreview}`;
 	const response = await fetch(endpoint, {
 		method: "POST",
 		headers: {
@@ -29,6 +29,7 @@ async function main() {
 		body: JSON.stringify({ query: gqlQuery }),
 	});
 	const responseBody = await response.json();
+	console.log(responseBody.data.posts.edges[0].node);
 	if (responseBody.errors) {
 		console.log("graphql query returned these errors, aborting: ");
 		console.log(errors);

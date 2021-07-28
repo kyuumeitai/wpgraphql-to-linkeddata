@@ -1,12 +1,12 @@
 {
   "@type": "BlogPosting",
-  "@id": "https://shnyder.com/business-model-canvas-for-metaexplorer",
-  "name": "Business Model Canvas for MetaExplorer",
-  "abstract": "<p>Before starting out with my plans to turn metaexplorer into a business, I wrote a business plan &#8211; and because 2020 showed us what it thinks of plans&#8230;</p>\n",
+  "@id": "http://localhost:8080/fans-de-tiktok-de-una-monja-se-quedan-sorprendidos-al-conocer-su-edad-su-secreto-es-vivir-sin-hombres",
+  "name": "Fans de TikTok de una monja se quedan sorprendidos al conocer su edad; su secreto es vivir sin hombres",
+  "abstract": "<p>Una monja que es viral en TikTok, sorprendió a sus seguidores al revelar su edad y creen que su secreto es vivir sin hombres</p>\n",
   "image": {
     "@type": "ImageObject",
-    "name": "Metaexplorer business model canvas, 2020-12-28",
-    "contentUrl": "https://shnyder.com/wp-content/uploads/2020/12/IMG_20201228_234552-scaled.jpg",
-    "thumbnailUrl": "https://shnyder.com/wp-content/uploads/2020/12/IMG_20201228_234552-150x150.jpg"
+    "name": "nun riding bike",
+    "contentUrl": "http://localhost:8080/wp-content/uploads/2021/07/jiyxtag2az0.jpg",
+    "thumbnailUrl": "http://localhost:8080/wp-content/uploads/2021/07/jiyxtag2az0.jpg"
   }
 }

@@ -1,0 +1,9 @@
+query wpPostPreview {
+  posts{
+    edges {
+      node {
+        ...PostPreview
+      }
+    }
+  }
+}
