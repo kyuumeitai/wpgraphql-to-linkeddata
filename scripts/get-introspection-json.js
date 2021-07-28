@@ -1,10 +1,6 @@
 import fs from "fs";
 import fetch from "node-fetch";
-import {
-	getIntrospectionQuery,
-	printSchema,
-	buildClientSchema,
-} from "graphql";
+import { getIntrospectionQuery, printSchema, buildClientSchema } from "graphql";
 
 /**
  * runs an introspection query on an endpoint and retrieves its result
@@ -13,8 +9,11 @@ import {
  */
 async function main() {
 	const endpoint = process.env.ENDPOINT;
-	if(!endpoint || endpoint.indexOf("your-wordpress-blog.orlocalhost") !== -1){
-		console.log("please set ENDPOINT environment variable to your graphql endpoint, aborting")
+	if (!endpoint) {
+		console.log(
+			process.env,
+			"please set ENDPOINT environment variable to your graphql endpoint, aborting"
+		);
 		return;
 	}
 	const introspectionQuery = getIntrospectionQuery();
